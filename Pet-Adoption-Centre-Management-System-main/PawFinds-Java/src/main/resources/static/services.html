@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - PawFinds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-paw"></i>
+                <span>PawFinds</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin-login.html" class="admin-btn">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Everything you need for pet adoption and rehoming</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-content">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Adopt a Pet -->
+                <div class="service-card" id="adopt">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Adopt a Pet</h3>
+                    <p>Find your perfect companion from our wide selection of pets. We make the adoption process simple and transparent.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Browse verified pets</li>
+                        <li><i class="fas fa-check"></i> Health records included</li>
+                        <li><i class="fas fa-check"></i> Easy adoption process</li>
+                        <li><i class="fas fa-check"></i> Post-adoption support</li>
+                    </ul>
+                    <a href="pets.html" class="btn btn-primary">Browse Pets</a>
+                </div>
+
+                <!-- Post a Pet -->
+                <div class="service-card" id="post">
+                    <div class="service-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h3>Post a Pet for Adoption</h3>
+                    <p>Need to rehome your pet? Post your pet on our platform and find them a loving new home.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Free pet listing</li>
+                        <li><i class="fas fa-check"></i> Reach thousands of adopters</li>
+                        <li><i class="fas fa-check"></i> Verified adopter profiles</li>
+                        <li><i class="fas fa-check"></i> Secure communication</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openPostPetModal()">Post Your Pet</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Pet Modal -->
+    <div id="postPetModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePostPetModal()">&times;</span>
+            <h2><i class="fas fa-paw"></i> Post a Pet for Adoption</h2>
+            <form id="postPetForm" class="adoption-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Pet Name *</label>
+                        <input type="text" id="petName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pet Type *</label>
+                        <select id="petType" required>
+                            <option value="">Select Type</option>
+                            <option value="Dog">Dog</option>
+                            <option value="Cat">Cat</option>
+                            <option value="Bird">Bird</option>
+                            <option value="Rabbit">Rabbit</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Breed *</label>
+                        <input type="text" id="breed" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Age (years) *</label>
+                        <input type="number" id="age" min="0" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Gender *</label>
+                        <select id="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Location *</label>
+                        <input type="text" id="location" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Description *</label>
+                    <textarea id="description" rows="4" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Owner Name *</label>
+                        <input type="text" id="ownerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number *</label>
+                        <input type="tel" id="contactNumber" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Owner Email</label>
+                    <input type="email" id="ownerEmail">
+                </div>
+
+                <div class="form-group">
+                    <label>Image URL</label>
+                    <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg">
+                </div>
+
+                <div class="form-row checkbox-row">
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="vaccinated">
+                        <label for="vaccinated">Vaccinated</label>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="trained">
+                        <label for="trained">Trained</label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Submit
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="closePostPetModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3><i class="fas fa-paw"></i> PawFinds</h3>
+                    <p>Connecting loving homes with pets in need.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pets.html">Browse Pets</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PawFinds. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>

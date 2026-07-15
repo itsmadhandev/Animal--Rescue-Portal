@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - PawFinds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <!-- Admin Navigation -->
+    <nav class="admin-navbar">
+        <div class="admin-nav-brand">
+            <i class="fas fa-paw"></i>
+            <span>PawFinds Admin</span>
+        </div>
+        <div class="admin-nav-right">
+            <span class="admin-username"><i class="fas fa-user"></i> <span id="adminName">Admin</span></span>
+            <button class="btn btn-danger btn-sm" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <!-- Admin Container -->
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <ul class="admin-menu">
+                <li class="active" onclick="showSection('dashboard')">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li onclick="showSection('pets')">
+                    <i class="fas fa-paw"></i>
+                    <span>Manage Pets</span>
+                </li>
+                <li onclick="showSection('adoptions')">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Adoption Requests</span>
+                </li>
+                <li onclick="showSection('approved')">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Approved</span>
+                </li>
+                <li onclick="showSection('adopted')">
+                    <i class="fas fa-heart"></i>
+                    <span>Adoption History</span>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="admin-section active">
+                <h1>Dashboard Overview</h1>
+                <div class="dashboard-cards">
+                    <div class="dashboard-card">
+                        <div class="card-icon blue">
+                            <i class="fas fa-paw"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3 id="totalPets">0</h3>
+                            <p>Total Pets</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon green">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3 id="availablePets">0</h3>
+                            <p>Available</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon orange">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3 id="pendingRequests">0</h3>
+                            <p>Pending Requests</p>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon red">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3 id="adoptedPets">0</h3>
+                            <p>Adopted</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-charts">
+                    <div class="chart-container">
+                        <h3>Recent Activities</h3>
+                        <div id="recentActivities" class="activities-list">
+                            <!-- Activities will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manage Pets Section -->
+            <section id="pets" class="admin-section">
+                <div class="section-header-admin">
+                    <h1>Manage Pets</h1>
+                    <button class="btn btn-primary" onclick="location.href='services.html#post'">
+                        <i class="fas fa-plus"></i> Add New Pet
+                    </button>
+                </div>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Breed</th>
+                                <th>Age</th>
+                                <th>Status</th>
+                                <th>Posted Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="petsTableBody">
+                            <tr>
+                                <td colspan="8" class="text-center">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Adoption Requests Section -->
+            <section id="adoptions" class="admin-section">
+                <h1>Pending Adoption Requests</h1>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Adopter Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Pet Name</th>
+                                <th>Submitted Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adoptionsTableBody">
+                            <tr>
+                                <td colspan="7" class="text-center">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Approved Requests Section -->
+            <section id="approved" class="admin-section">
+                <h1>Approved Adoption Requests</h1>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Adopter Name</th>
+                                <th>Pet Name</th>
+                                <th>Approved Date</th>
+                                <th>Comments</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="approvedTableBody">
+                            <tr>
+                                <td colspan="6" class="text-center">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Adoption History Section -->
+            <section id="adopted" class="admin-section">
+                <h1>Adoption History</h1>
+                <div class="table-container">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Adopter Name</th>
+                                <th>Pet Name</th>
+                                <th>Adoption Date</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adoptedTableBody">
+                            <tr>
+                                <td colspan="5" class="text-center">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- View Details Modal -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDetailsModal()">&times;</span>
+            <div id="modalDetails"></div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/admin-panel.js"></script>
+</body>
+</html>

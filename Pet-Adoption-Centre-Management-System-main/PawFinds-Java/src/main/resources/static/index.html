@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawFinds - Find Your Perfect Pet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-paw"></i>
+                <span>PawFinds</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin-login.html" class="admin-btn">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="animate-fade-in">Find Your Perfect Companion</h1>
+            <p class="animate-fade-in-delay">Give a loving home to pets in need. Adopt, don't shop!</p>
+            <div class="hero-buttons animate-fade-in-delay-2">
+                <a href="pets.html" class="btn btn-primary">Browse Pets</a>
+                <a href="services.html#post" class="btn btn-secondary">Post a Pet</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-heart"></i>
+                    <h3 class="counter" data-target="1500">0</h3>
+                    <p>Pets Adopted</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3 class="counter" data-target="3200">0</h3>
+                    <p>Happy Families</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-paw"></i>
+                    <h3 class="counter" data-target="850">0</h3>
+                    <p>Available Pets</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 class="counter" data-target="100">0</h3>
+                    <p>Verified Owners</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Pets Section -->
+    <section class="featured-pets">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Featured Pets</h2>
+                <p>These adorable companions are waiting for their forever homes</p>
+            </div>
+            <div class="pets-grid" id="featuredPetsGrid">
+                <!-- Pets will be loaded dynamically -->
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading pets...</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="pets.html" class="btn btn-primary">View All Pets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Adopt Section -->
+    <section class="why-adopt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Adopt From PawFinds?</h2>
+                <p>We make pet adoption simple, safe, and rewarding</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Verified Pets</h3>
+                    <p>All pets are verified with health records and vaccination details</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Easy Process</h3>
+                    <p>Simple adoption process with transparent communication</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our team is always here to help you with adoption queries</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Post-Adoption Care</h3>
+                    <p>Get guidance and support even after bringing your pet home</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Four simple steps to find your new best friend</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Browse Pets</h3>
+                    <p>Search through our collection of adorable pets</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Fill Application</h3>
+                    <p>Complete a simple adoption application form</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Get Approved</h3>
+                    <p>Wait for admin approval and verification</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Take Home</h3>
+                    <p>Welcome your new furry friend home!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Change a Life?</h2>
+                <p>Thousands of pets are waiting for loving homes. Start your adoption journey today!</p>
+                <a href="pets.html" class="btn btn-light">Start Adopting Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3><i class="fas fa-paw"></i> PawFinds</h3>
+                    <p>Connecting loving homes with pets in need. Every adoption saves a life.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pets.html">Browse Pets</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Pet Care Tips</a></li>
+                        <li><a href="#">Adoption Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="admin-login.html">Admin Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> info@pawfinds.com</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Pet Street, City</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PawFinds. All rights reserved. Made with <i class="fas fa-heart"></i> for pets.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
